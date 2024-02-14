@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div id="top">
+
+    </div>
+</head>
+<style>
+    label{
+        display: block;
+        font-family: "Confetti Stream";
+        font-size: 5vh;
+    }
+    @font-face {
+        font-family: "Confetti Stream";
+        src: url("/static/Confetti Stream.ttf") format("truetype");
+    }
+    input[type="text"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="password"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="email"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="tel"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    .parent div{
+        display: inline;
+        float: left;
+    }
+    .parent form{
+        display: inline;
+    }
+    div[id="top"]{
+        background: #b9986c;
+        height:10vh;
+    }
+    img[id="logo"]{
+        width: 55vw;
+    }
+    div[id="loginForm"]{
+        float: right;
+        margin-left: 10vw;
+    }
+    input[type="submit"]{
+        margin-top: 8px;
+        background: #f5c891;
+        border-radius: 9px;
+        width: 15vw;
+        height: 3vh;
+        font-size: 2vh;
+    }
+</style>
+
+<body>
+<div>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <img src="https://media.discordapp.net/attachments/931243612371550225/1185889107809943552/snapedit_1702808385579.png?ex=6591404c&is=657ecb4c&hm=3cd32310057a67624b27820ad0ada84036f6dceff52e5e1ce21ff9a6d871d651&=&format=webp&quality=lossless&width=453&height=319" alt="Na Mesa logo" id="logo"/>
+                </div>
+            </td>
+            <td>
+                <div id="loginForm">
+                    <form th:action="@{/reg}" method="post">
+                        <label>Login</label>
+                        <input type="text" placeholder="CoolLogin38" name="visitorLogin" id="visitorLogin" required>
+                        <label>Username</label>
+                        <input type="text" placeholder="FancyName" name="visitorUsername" required>
+                        <label>EMail</label>
+                        <input type="email" placeholder="mybox@service.domen" name="eMail" required>
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" name="phoneNumber" pattern="[0-9]{11}"  required>
+                        <label>Password</label>
+                        <input type="password" name="visitorPassword" placeholder="TheMostSecretPassword1929" required>
+                        <input type="submit" value="Create account">
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+</body>
+</html>

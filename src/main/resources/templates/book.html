@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div[name="block"]{
+        display:inline-block;
+    }
+    div[name="panel"]{
+        display:inline-block;
+        float: right;
+        margin-right: 1.5vw;
+    }
+    label{
+        font-family: "Confetti Stream";
+        font-size: 3vh;
+    }
+    label[name="head"] {
+        font-family: "Confetti Stream";
+        font-size: 5vh;
+    }
+    @font-face {
+        font-family: "Confetti Stream";
+        src: url("/static/Confetti Stream.ttf") format("truetype");
+    }
+    input[type="text"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="password"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="email"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="datetime-local"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    input[type="tel"]{
+        display: block;
+        font-size: 2.5vh;
+        border-radius: 9px;
+    }
+    .parent div{
+        display: inline;
+        float: left;
+    }
+    .parent form{
+        display: inline;
+    }
+    div[id="top"]{
+        background: #b9986c;
+        height:10vh;
+    }
+    img[id="logo"]{
+        width: 55vw;
+    }
+    img[id="littleLogo"]{
+        margin-top: 1vh;
+        width: 7vw;
+        float:left;
+    }
+    div[id="loginForm"]{
+        float: right;
+        margin-left: 10vw;
+    }
+    input[type="submit"]{
+        margin-top: 8px;
+        background: #f5c891;
+        border-radius: 9px;
+        width: 15vw;
+        height: 3vh;
+        font-size: 2vh;
+    }
+    input[type="submit"][name="ShowMore"]{
+        margin-top: 8px;
+        background: #f5c891;
+        border-radius: 9px;
+        width: 15vw;
+        height: 10vh;
+        font-size: 2vh;
+    }
+    img[name="insideMap"]{
+        width: 45vw;
+    }
+    div[name="object"]{
+        border: black 2px solid;margin-top: 4px;
+    }
+</style>
+<div id="top">
+    <div name="panel">
+        <div name="block"><img src="https://media.discordapp.net/attachments/931243612371550225/1185944260281901167/snapedit_1702808385579.png?ex=659173a9&is=657efea9&hm=ad3484e443f3485fce5430964eebdcf01802288cd967f59bb248252d63dfeae8&=&format=webp&quality=lossless&width=453&height=319" alt="Na Mesa logo" id="littleLogo"/>
+        </div>
+        <div name="block">
+            <form method="get" action="/logout" >
+                <input type="submit" name="Log Out" value="Выйти">
+            </form>
+            <form method="get" action="/profile" >
+                <input type="submit" name="Profile" value="Профиль">
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<body>
+<div name="object">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <img name="insideMap" th:src="${branch.getMapBranch()}">
+                </div>
+            </td>
+            <td>
+                <div id="loginForm">
+                    <form th:action="@{/book/time}" method="get">
+                        <label>Date Time</label>
+                        <input type="hidden" name="branch" th:value="${branch.getIdBranch()}">
+                        <input type="datetime-local" name="stamp">
+                        <input type="submit" value="Next">
+                    </form>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+
+</body>
+</html>
